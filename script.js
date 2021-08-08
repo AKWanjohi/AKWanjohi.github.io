@@ -1,4 +1,4 @@
-topBtn = document.getElementById('top-site')
+const topBtn = document.getElementById('top-site')
 
 window.onscroll = function() {scrollFunction()}
 
@@ -12,4 +12,12 @@ function scrollFunction() {
 
 function topFunction() {
     document.documentElement.scrollTop = 0
+}
+
+const collapsible = document.getElementById("menu")
+const menuBtn = document.getElementById('menuBtn')
+
+function expandMenu() {
+    collapsible.classList.toggle('expanded')
+    menuBtn.classList.toggle('active')
 }

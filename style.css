@@ -16,6 +16,7 @@ html {
 
 body {
   font-family: "Poppins", sans-serif;
+  font-weight: 300;
   background: #ececec;
 }
 
@@ -23,6 +24,7 @@ body {
 .container {
   max-width: 1140px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 header,
@@ -38,6 +40,11 @@ footer {
   text-transform: uppercase;
 }
 
+.nav-button {
+  display: none;
+  width: 30px;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -45,8 +52,8 @@ nav {
 }
 
 ul {
-  list-style: none;
   display: inherit;
+  list-style: none;
 }
 
 li {
@@ -163,6 +170,9 @@ section.hero {
 }
 
 .projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
   margin: 20px 0;
 }
 
@@ -173,6 +183,7 @@ section.hero {
   width: max-content;
   text-align: center;
   border-radius: 5px;
+  max-width: 100%;
 }
 
 .projects div h3 {
@@ -180,7 +191,7 @@ section.hero {
 }
 
 .projects div img {
-  width: 300px;
+  width: 100%;
 }
 
 .project-btn {
@@ -292,6 +303,14 @@ form .form-group:last-child {
   cursor: pointer;
 }
 
+.active {
+  display: block;
+}
+
+.inactive {
+  display: none;
+}
+
 /* Footer Section */
 footer {
   text-align: center;
@@ -317,4 +336,130 @@ a img:hover {
 
 section {
   margin-top: 30px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 480px) {
+  strong {
+    font-weight: 500;
+  }
+
+  /* Header */
+  header {
+    padding: 10px;
+  }
+
+  .container {
+    padding: 0 10px;
+  }
+
+  .logo {
+    font-size: 26px;
+    font-weight: 500;
+  }
+
+  nav {
+    flex-wrap: wrap;
+  }
+
+  .nav-button {
+    display: block;
+    opacity: 0.5;
+    transition: 0.3s linear;
+  }
+
+  .nav-button.active {
+    opacity: 1;
+  }
+
+  .collapsible-content {
+    display: block;
+    width: 100%;
+    text-align: center;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.3s linear;
+  }
+
+  .collapsible-content.expanded {
+    max-height: max-content;
+    opacity: 1;
+  }
+
+  .collapsible-content li {
+    border-bottom: 1px solid #666;
+    padding-bottom: 10px;
+  }
+
+  /* Hero */
+  .hero-info {
+    text-align: center;
+  }
+
+  .hero-info h1 {
+    font-size: 34px;
+    line-height: 1.1;
+  }
+  .hero-info p {
+    line-height: 1.3;
+  }
+
+  .contact-btn {
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  /* About Me */
+  #about-me .container {
+    flex-direction: column;
+  }
+
+  #about-me .container div:first-child {
+    width: 100%;
+  }
+
+  #about-me .container div:last-child {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  #about-me .container div:last-child p {
+    margin: 0 0 20px;
+  }
+
+  #about-me img {
+    width: 80px;
+  }
+
+  h2 {
+    font-size: 28px;
+    font-weight: 500;
+    padding-bottom: 5px;
+    border-bottom: 3px solid var(--primary-color);
+  }
+
+  /* My Projects */
+  .projects {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  #my-projects .container div:last-child {
+    text-align: center;
+  }
+
+  /* Contact Me */
+  form {
+    width: 100%;
+    padding: 10px 20px;
+  }
+
+  label {
+    font-weight: 500;
+  }
+
+  .contact-icons {
+    text-align: center;
+  }
 }

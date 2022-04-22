@@ -1,23 +1,27 @@
-const topBtn = document.getElementById('top-site')
+const topSiteBtn = document.getElementById("top-site");
 
-window.onscroll = function() {scrollFunction()}
+window.onscroll = scrollFunction;
 
 function scrollFunction() {
-    if (document.documentElement.scrollTop > 500) {
-        topBtn.style.display = "block"
-    } else {
-        topBtn.style.display = "none"
-    }
+  if (document.documentElement.scrollTop > 500) {
+    topSiteBtn.style.display = "block";
+  } else {
+    topSiteBtn.style.display = "none";
+  }
 }
 
-function topFunction() {
-    document.documentElement.scrollTop = 0
+topSiteBtn.onclick = goToTop;
+
+function goToTop() {
+  document.documentElement.scrollTop = 0;
 }
 
-const collapsible = document.getElementById("menu")
-const menuBtn = document.getElementById('menuBtn')
+const collapsible = document.getElementById("menu");
+const menuBtn = document.querySelector(".nav-button");
+
+menuBtn.onclick = expandMenu;
 
 function expandMenu() {
-    collapsible.classList.toggle('expanded')
-    menuBtn.classList.toggle('active')
+  collapsible.classList.toggle("expanded");
+  menuBtn.classList.toggle("active");
 }

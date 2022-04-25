@@ -25,3 +25,11 @@ function expandMenu() {
   collapsible.classList.toggle("expanded");
   menuBtn.classList.toggle("active");
 }
+
+const form = document.querySelector("form");
+form.addEventListener("submit", () => {
+  form.submit();
+  setTimeout(() => {
+    form.reset();
+  }, 1000);
+});
